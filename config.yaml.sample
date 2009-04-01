@@ -1,6 +1,6 @@
-site_name: Folketwinget
-site_tag_line: Folket taler til magten
-site_domain: folketwinget.dk
+site_name: twitterengine
+site_tag_line: A twitter aggregator for Google AppEngine
+site_domain: twitterengine.appspot.com
 
 twitter_username: <username>
 twitter_password: <password>
