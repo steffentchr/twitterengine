@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>{{ config.site_name }} - {{ config.site_tag_line }}</title>
+    <link rel="alternate" type="application/rss+xml" title="RSS Feeds" href="/rss" />
+    <link rel="stylesheet" type="text/css" href="/resources/style.css" />
+    <link rel="icon" type="image/ico" href="/favicon.ico">
+  </head>
+  <body>
+    <div style="display:none;"><h1>{{ config.site_name }}</h1><h2>{{ config.tag_line }}</h2></div>
+    <div id="container">
+      <div id="header"><a class="feedicon" href="/rss"><img src="/resources/feed.png" border="0"/></a></div>
+      <div id="sidebar">
+        <h3>Hvad?</h3>
+        <p>Folketwinget samler danskernes tweets til politikere på Christiansborg. Hvis du skriver til en bestemt politiker eller tagger med #folketwinget vil beskeden dukke op på denne side. På den måde kan alle følge med i eller deltage i samtalen mellem folket og politikerne lige nu. </p>
+        <h3>Hvorfor?</h3>
+        <p>En række folketingspolitikere er begyndt at bruge Twitter til at kommunikere direkte med verden udenfor borgen. Vi synes det er interessant, fordi Twitter ikke er et traditionelt medie: Det er redskab, der muliggør korte, direkte og nære samtaler udenom de traditionelle kanaler (massemedier, partiorganer osv.). Derfor har vi bygget Folketwinget.dk som et eksperiment, der samler borgernes samtaler med politikerne for at stimulere en mere gennemsigtig, demokratisk og - ja - sjov repræsentativ proces.</p>
+      </div>
+      <div id="content">
+        {% for tweet in tweets %}
+        <div id="{{ tweet.id }}" class="tweet">
+          <div class="usericon"><a href="http://twitter.com/{{ tweet.from_user|urlencode }}"><img src="{{ tweet.profile_image_url }}" width="48" height="48" /></a></div>
+          <div class="text">
+            <a href="http://twitter.com/{{ tweet.from_user|urlencode }}" class="userlink">{{ tweet.from_user|escape }}:</a> {{ tweet.text|escape|urlize }}
+          </div>
+          <div class="meta">
+            <a href="http://twitter.com/{{ tweet.from_user|urlencode }}/statuses/{{ tweet.id|urlencode }}">{{ tweet.status.relative_created_at }}</a>
+            fra {{ tweet.source }}
+          </div>
+          <div class="clearleft"></div>
+        </div>
+        {% endfor %}
+
+        <div class="paging">
+          {% if show_prev_page %}<a href="/?page={{ prev_page }}">&laquo; Forrige 20</a>{% endif %}
+          {% if show_next_page %}<a href="/?page={{ next_page }}">Næste 20 &raquo;</a>{% endif %}
+        </div>
+      </div>
+      <div id="footer">
+        <table>
+          <tr>
+            <td width="50%" valign="top">
+              <h3>Hvem?</h3>
+              <div class="cloud">{% for c in cloud|dictsortreversed:"count"|slice:":40"|dictsort:"lower_name" %} {{ c.html }} {% endfor %}</div>
+            </td>
+            <td width="50%" valign="top">
+              <h3>Hvordan?</h3>
+              <p>Twitter er, kort forklaret, tekstbeskeder på op til 140 tegn, der fungerer ligesom en blog. Derfor kaldes det også mikroblogging. Når du har oprettet en profil får du et twitternavn (f.eks. "mandenpaagaden") og kan så du løbende opdatere din profil med nye tweets via på nettet eller SMS. Du sender beskeder rettet til en bestemt bruger med @-tegnet. F.eks.: "@vestager, hvem støtter B som statsminister?". Ved at tagge bestemte ord, kan andre finde dine beskeder, f.eks, #folketinget: "I dag besøger @BarackObama #folketinget" . Denne side "fanger" alle beskeder til og fra registrerede politikere på Twitter, samt beskeder tagget med #folketinget, #ftwinget og #folketwinget. </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="punchline">
+        Lavet af <a href="http://socialsquare.dk">socialsquare</a> på vegne af det danske folk.
+        &nbsp;
+        <a href="/rss"><img src="/resources/feed.png" border="0"/></a>
+      </div>
+    </div>
+  </body>
+</html>

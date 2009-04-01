@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>{{ config.site_name }}</title>
+    <link>http://{{ config.site_domain }}</link>
+    <description>http://{{ config.site_tag_line }}</description>
+    <language>da-dk</language>
+    <ttl>40</ttl>
+    {% for tweet in tweets %}
+    <item>
+      <title>{{ tweet.text|escape }}</title>
+      <description>{{ tweet.text|escape }}</description>
+      <pubDate>{{ tweet.created_at }}</pubDate>
+      <guid>http://twitter.com/{{ tweet.from_user|urlencode }}/statuses/{{ tweet.id|urlencode }}</guid>
+      <link>http://twitter.com/{{ tweet.from_user|urlencode }}/statuses/{{ tweet.id|urlencode }}</link>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>

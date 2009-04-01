@@ -1,0 +1,29 @@
+site_name: Folketwinget
+site_tag_line: Folket taler til magten
+site_domain: folketwinget.dk
+
+twitter_username: <username>
+twitter_password: <password>
+
+users:
+- SimonEmilAmmitz
+- anderssamuelsen
+- vestager
+- RasmusPrehn
+- oestergaard
+- Heunicke
+- JeppeKofod
+- StemLauritzen
+- IdaAuken
+- Kirstenbrosbol
+- LeneEspersen
+- radikale
+- KonservativeDK
+- folketwinget
+- ftwinget
+
+hashes:
+- radikale
+- KonservativeDK
+- folketwinget
+- ftwinget

@@ -1,0 +1,40 @@
+/* Prepz */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}ol,ul {list-style:none;}caption,th {text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym {border:0;}
+.clearleft {clear:left;}
+
+/* El grid */
+body {text-align:center; background-color:#f4f4f4; font-family:'Lucida Grande',sans-serif; font-size:13px; color:#222; line-height:18px;}
+#container {width:893px; text-align:left; margin:0 auto; background-color:white;}
+#header {background:url('/resources/top.png') center left no-repeat #f4f4f4; height:154px; position:relative; margin-top:5px;}
+#header .feedicon {position:absolute; top:20px; right:20px;}
+#sidebar {float:right; width:220px; padding:20px 10px;}
+#content {padding:20px; margin-right:250px;}
+#footer {clear:both;}
+
+/* Da twe3tz */
+.tweet {font-family:Georgia,serif; border-bottom:1px dashed #D2DADA; padding:18px 10px;}
+.tweet .usericon {float:left;}
+.tweet .text, .tweet .meta {margin-left:60px;}
+.tweet .text {font-size:16px; line-height:20px;}
+.tweet .text a {background-color:#4cf; color:white; text-decoration:none; padding:0 2px;}
+.tweet .text a.userlink {background-color:#09f;}
+.tweet .meta {font-size:11px; font-style:italic; color:#666;}
+.tweet .meta a {text-decoration:none; color:#666;}
+.tweet .meta a:hover {text-decoration:underline; color:#666;}
+
+.paging {text-align:center; margin-top:15px;}
+.paging a {background-color:#4cf; color:white; text-decoration:none; padding:0 2px;}
+.paging a.userlink {background-color:#09f;}
+
+/* Sajtbar et al. */
+#sidebar h3, #footer h3 {color:#0cf; text-transform:uppercase; font-size:16px; font-weight:bold; margin:5px 0;}
+#sidebar p, #footer p {padding-bottom:10px;}
+#footer table td {padding:20px; font-size:13px; line-height:18px;}
+
+#punchline {background-color:black; color:white; padding:10px 20px; text-align:right;}
+#punchline a {color:white; text-decoration:none;}
+#punchline a:hover {text-decoration:underline;}
+
+
+.cloud {background-color:#00C6F7; line-height:21px; padding:5px; text-align:center;}
+.cloud a {color:white; text-decoration:none; padding:0 2px;}
