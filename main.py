@@ -91,7 +91,6 @@ class RssHandler(webapp.RequestHandler):
     path = os.path.join(os.path.dirname(__file__), 'rss.html')
     self.response.headers['Content-Type'] = 'application/xml+rss'
     self.response.out.write(template.render(path, {'config':config, 'tweets':Tweet.all().order('-id').fetch(20)}))
-    self.response.out.write(terms)
 
 
 class ImportHandler(webapp.RequestHandler):
