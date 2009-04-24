@@ -1,0 +1,4 @@
+cron:
+- description: import new tweets
+  url: /import
+  schedule: every 5 minutes
